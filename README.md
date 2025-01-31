@@ -1,8 +1,45 @@
-# **EC2 Basics**
+# **Launching EC2 Instances and Exploring AWS EC2 Dashboard**
 
 ---
 
-## **EC2 Instance Launch Using Windows AMI**
+## **Table of Contents**
+- [Introduction](#introduction)
+- [Launching EC2 Instances](#launching-ec2-instances)
+  - [Using Windows AMI](#using-windows-ami)
+  - [Using Ubuntu AMI](#using-ubuntu-ami)
+  - [Using Linux AMI](#using-linux-ami)
+  - [Using PuTTY](#using-putty)
+- [Exploring AWS EC2 Dashboard](#exploring-aws-ec2-dashboard)
+- [AWS Protocols](#aws-protocols)
+
+---
+
+## **Introduction**
+
+This guide provides detailed steps to launch EC2 instances using various Amazon Machine Images (AMIs), such as **Windows**, **Ubuntu**, and **Linux**. It also includes instructions for connecting instances using **Git Bash**, **PuTTY**, and **RDP**, along with a walkthrough of the AWS EC2 dashboard and supported communication protocols.
+
+---
+
+## **Launching EC2 Instances**
+
+### **EC2 Instance Launch Using Windows AMI**
+
+1. **Access EC2 Service**:
+   - Navigate to the AWS Management Console and search for **EC2**.
+   - Click on **"Launch Instance"** to start creating a new instance.
+
+2. **Configure Instance**:
+   - Assign a name to the instance.
+   - Choose **Windows Server** from the Amazon Machine Images (AMI).
+   - Select an instance type (e.g., `t2.micro` for free-tier eligibility).
+   - Generate or select a key pair for secure access.
+   - Configure security groups to allow **RDP (Remote Desktop Protocol)** access.
+
+3. **Launch and Connect**:
+   - Click **"Launch Instance"** and ensure the RDP inbound rule is correctly configured.
+   - Generate the administrator password from the AWS Console and use an **RDP client** to connect by entering the public DNS and administrator credentials.
+  
+## **Using Windows AMI**
 
 1. Navigate to the AWS console and search for the EC2 service. The homepage should look like this:  
    ![EC2 Homepage](https://github.com/user-attachments/assets/a620307b-59d4-4bb5-9374-c2c376707fa6)
@@ -31,7 +68,23 @@
 
 ---
 
-## **EC2 Instance Launch Using Ubuntu AMI**
+---
+
+### **EC2 Instance Launch Using Ubuntu AMI**
+
+1. **Select Ubuntu AMI**:
+   - Follow the same steps as above but select **Ubuntu** as the AMI.
+
+2. **Key Pair and Security Group**:
+   - Generate or use an existing key pair.
+   - Enable **SSH** traffic in the security group.
+
+3. **Connect via Git Bash**:
+   - Use the SSH command provided in the AWS Console under **"Connect"**.
+   - Open Git Bash, paste the command, and hit Enter to establish the connection.
+     
+
+## Using Ubuntu AMI
 
 1. Follow the same steps as above but choose **Ubuntu AMI**.
 2. Copy the **SSH command** from the instance and paste it in Git Bash:  
@@ -42,31 +95,56 @@
 
 ---
 
-## **EC2 Instance Launch Using Linux AMI**
 
-1. Select **Linux AMI**, configure the instance, and connect using Git Bash:  
-   ![Linux AMI Selection](https://github.com/user-attachments/assets/4812e130-0513-4c37-a6d6-fbbbe621d4f6)  
-   ![SSH Client](https://github.com/user-attachments/assets/1a5adbf7-8608-4fa3-97ed-2f365236a4fd)
+##  EC2 Instance Launch Using Linux AMI
 
-2. Successfully connect to the EC2 instance via SSH:  
-   ![Linux SSH Connection](https://github.com/user-attachments/assets/b534752b-808b-4fff-9477-a13289c2f6a5)
+### Select Linux AMI:
+- Choose **Linux AMI** from the AWS Management Console.
 
----
+### Key Pair and Security Group:
+- Create or use an existing **key pair**.
+- Ensure the **security group** allows inbound SSH traffic (port 22).
 
-## **Launching an Instance Using PuTTY**
+### Connect via Git Bash:
+- Use the **SSH command** provided in the AWS Console under "Connect".
+- Open **Git Bash**, paste the command, and hit Enter to establish the connection.
 
-1. Convert the **.pem key pair** to **.ppk format** using PuTTYgen:  
-   ![PuTTYgen Key Conversion](https://github.com/user-attachments/assets/c503b4e1-f033-42c4-831e-ca396a33d65c)
+![Linux AMI Selection](https://github.com/user-attachments/assets/4812e130-0513-4c37-a6d6-fbbbe621d4f6)  
+![SSH Client](https://github.com/user-attachments/assets/1a5adbf7-8608-4fa3-97ed-2f365236a4fd)  
+![Linux SSH Connection](https://github.com/user-attachments/assets/b534752b-808b-4fff-9477-a13289c2f6a5)
 
-2. Open PuTTY, paste the **Public IP Address**, upload the converted key pair, and connect:  
-   ![PuTTY Connection](https://github.com/user-attachments/assets/400367af-5214-4174-be06-46e8a479cc7b)
+##  EC2 Instance Launch Using PuTTY
 
-3. Successfully log in to the EC2 instance using **ec2-user**:  
-   ![PuTTY EC2 Connection](https://github.com/user-attachments/assets/17202524-92e4-4187-a8b4-06d8ca82faa4)
+### Convert Key Pair:
+- Use **PuTTYgen** to convert the **.pem** key pair to **.ppk** format.
+
+### Key Pair and Security Group:
+- Create or use an existing **key pair**.
+- Ensure the **security group** allows inbound SSH traffic (port 22).
+
+### Connect via PuTTY:
+- Open **PuTTY**, enter the **Public IP Address** of the EC2 instance.
+- Under SSH > Auth, upload the converted **.ppk** key.
+- Click **Open** to establish the connection.
+
+![PuTTYgen Key Conversion](https://github.com/user-attachments/assets/c503b4e1-f033-42c4-831e-ca396a33d65c)  
+![PuTTY Connection](https://github.com/user-attachments/assets/400367af-5214-4174-be06-46e8a479cc7b)  
+![PuTTY EC2 Connection](https://github.com/user-attachments/assets/17202524-92e4-4187-a8b4-06d8ca82faa4)
+
 
 ---
 
 ## **Exploring AWS EC2 Dashboard**
+
+### **Instance Overview**
+- View details such as **Instance ID**, **State**, **Public DNS**, **Security Group**, and more.
+
+### **Monitoring Metrics**
+- **CPU Utilization**: Analyze the percentage of CPU usage.
+- **Disk I/O**: Monitor read/write operations.
+- **Network Traffic**: Track data flow in and out of the instance.
+
+- ## **Exploring AWS EC2 Dashboard**
 
 - The dashboard provides various features for monitoring and managing your instance:  
   ![Dashboard](https://github.com/user-attachments/assets/5d009f83-3b0a-4718-901f-36a58eafc8e8)
@@ -83,7 +161,10 @@
 
 ---
 
-## **Protocols**
+
+---
+
+## **AWS Protocols**
 
 ### Device Communication Protocols in AWS IoT Core:
 - **MQTT**: Lightweight protocol for small data transfers.
