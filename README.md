@@ -22,7 +22,6 @@
 6. Connect to the EC2 instance using **RDP Client**:
    - Generate the password:  
      ![Generate Password](https://github.com/user-attachments/assets/edf37582-8ea9-4ff7-bb48-ffd788624bd1)
-     ![Choose Key Pair](https://github.com/user-attachments/assets/61f1ba40-67ce-4864-b062-6d911f36d889)
    - The generated password appears as follows:  
      ![Generated Password](https://github.com/user-attachments/assets/7e4a4256-2166-4aee-92b2-600cdebed09f)
 
