@@ -87,13 +87,15 @@ Paste it in the browser’s address bar to access the simple webpage.
 
 
 ## Instance Types
-**1. General Purpose Instances (T-Series):**
-T2: Store extra CPU power when not in use, suitable for small to medium-sized websites and basic development.
-T3: Faster overall, better handling of sudden CPU spikes.
-**2. Compute Optimized Instances (C-Series):**
-Best for compute-heavy tasks such as powerful web servers or complex scientific calculations.
-**3. Memory Optimized Instances (R-Series):**
-Suitable for large databases and applications requiring lots of memory.
-**4. Storage Optimized Instances (I-Series):**
-Perfect for storage-intensive apps that require fast SSD storage for large files and databases.
+ 1  **General Purpose Instances (T-Series):**
+- T2: Store extra CPU power when not in use, suitable for small to medium-sized websites and basic development.
+- T3: Faster overall, better handling of sudden CPU spikes.
+2. **Compute Optimized Instances (C-Series):**
+  - Best for compute-heavy tasks such as powerful web servers or complex scientific calculations.
+
+3. **Memory Optimized Instances (R-Series):**
+    - Suitable for large databases and applications requiring lots of memory.
+
+4. **Storage Optimized Instances (I-Series):**
+- Perfect for storage-intensive apps that require fast SSD storage for large files and databases.
 
